@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Farmacia.Models.Medicamentos>
+
+@{
+    ViewData["Title"] = "Panel de Administración";
+}
+
+<h2 class="text-danger mb-3">Panel de Administración de Medicamentos</h2>
+
+<p>
+    <a asp-controller="Crear" asp-action="Crear" class="btn btn-primary">Agregar Nuevo Medicamento</a>
+</p>
+
+<div class="table-responsive shadow-sm rounded">
+    <table class="table table-striped table-hover mb-0">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Valor</th>
+                <th>Stock</th>
+                <th>F. Vencimiento</th>
+                <th>F. Fabricación</th>
+                <th>Gramaje</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.id)</td>
+                    <td>@Html.DisplayFor(modelItem => item.nombre)</td>
+                    <td>@Html.DisplayFor(modelItem => item.descripcion)</td>
+                    <td>$@Html.DisplayFor(modelItem => item.valor)</td>
+                    <td>@Html.DisplayFor(modelItem => item.cantidad)</td>
+                    <td>@item.fechaCaducidad.ToShortDateString()</td>
+                    <td>@item.fechaFabricacion.ToShortDateString()</td>
+                    <td>@Html.DisplayFor(modelItem => item.gramaje)</td>
+                    <td>
+                        <a asp-controller="Crear" asp-action="Editar" asp-route-id="@item.id" class="btn btn-sm btn-warning mb-1">Editar</a>
+                        <a asp-controller="Crear" asp-action="Eliminar" asp-route-id="@item.id" class="btn btn-sm btn-danger mb-1">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

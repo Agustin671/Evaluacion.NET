@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Iniciar Sesión";
+}
+
+<div class="row justify-content-center mt-5">
+    <div class="col-md-4">
+        <div class="card shadow-sm border-0 rounded-lg">
+            <div class="card-header bg-primary text-white text-center py-3">
+                <h4 class="mb-0">Acceso Administrativo</h4>
+            </div>
+            <div class="card-body p-4">
+
+                @if (ViewBag.Error != null)
+                {
+                    <div class="alert alert-danger text-center">
+                        @ViewBag.Error
+                    </div>
+                }
+
+                <form asp-controller="Acceso" asp-action="Login" method="post">
+                    <div class="form-group mb-3">
+                        <label class="fw-bold mb-1">Usuario</label>
+                        <input type="text" name="usuario" class="form-control" placeholder="Ingrese su usuario" required autofocus />
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <label class="fw-bold mb-1">Contraseña</label>
+                        <input type="password" name="clave" class="form-control" placeholder="Ingrese su contraseña" required />
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg">Ingresar al Sistema</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
