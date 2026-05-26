@@ -1,27 +1,23 @@
 ﻿using Farmacia.Data;
 using Farmacia.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Http; // Librería para leer sesiones
+using Microsoft.AspNetCore.Http;
 using MySql.Data.MySqlClient;
 
 namespace Farmacia.Controllers
 {
     public class MedicamentosController : Controller
     {
-        // PÚBLICO
         public IActionResult Index()
         {
             List<Medicamentos> lista = ObtenerListaMedicamentos();
             return View(lista);
         }
 
-        // PRIVADO (Revisa la sesión)
         public IActionResult Admin()
         {
-            // Verificamos si la variable de sesión existe y dice "Activo"
             if (HttpContext.Session.GetString("UsuarioAdmin") != "Activo")
             {
-                // Si no la tienes (porque cerraste la web y se borró), te manda al Login
                 return RedirectToAction("Login", "Acceso");
             }
 
