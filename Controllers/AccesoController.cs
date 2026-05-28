@@ -24,5 +24,11 @@ namespace Farmacia.Controllers
             ViewBag.Error = "Datos incorrectos, intenta de nuevo.";
             return View();
         }
+                public IActionResult Salir()
+        {
+            HttpContext.Session.Remove("UsuarioAdmin");
+
+            return RedirectToAction("Index", "Home");
+        }
     }
 }
