@@ -3,8 +3,13 @@
 @{
     ViewData["Title"] = "Panel de Administración";
 }
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Panel de Administración</h2>
 
-<h2 class="text-danger mb-3">Panel de Administración de Medicamentos</h2>
+    <a asp-controller="Acceso" asp-action="Salir" class="btn btn-danger fw-bold">
+        Cerrar Sesión
+    </a>
+</div>
 
 <p>
     <a asp-controller="Crear" asp-action="Crear" class="btn btn-primary">Agregar Nuevo Medicamento</a>
