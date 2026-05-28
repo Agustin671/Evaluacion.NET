@@ -50,7 +50,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.fechaFabricacion, "Fecha de Fabricación", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.fechaFabricacion, new { htmlAttributes = new { @class = "form-control", type = "date" } })
+                @Html.EditorFor(model => model.fechaFabricacion, new { htmlAttributes = new { @class = "form-control", type = "date", required = "required" } })
                 @Html.ValidationMessageFor(model => model.fechaFabricacion, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -58,7 +58,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.fechaCaducidad, "Fecha de Vencimiento", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.fechaCaducidad, new { htmlAttributes = new { @class = "form-control", type = "date" } })
+                @Html.EditorFor(model => model.fechaCaducidad, new { htmlAttributes = new { @class = "form-control", type = "date", required = "required" } })
                 @Html.ValidationMessageFor(model => model.fechaCaducidad, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -66,7 +66,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.gramaje, "Gramaje", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.gramaje, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.gramaje, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                 @Html.ValidationMessageFor(model => model.gramaje, "", new { @class = "text-danger" })
             </div>
         </div>
