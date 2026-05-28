@@ -23,3 +23,5 @@ Servidor: localhost
 Base de datos: farmacia
 Usuario: root
 Contraseña: 0980
+
+Para abrirlo tiene que descargar la carpeta, descomprimirla luego abrir la carpeta y luego abrir este archivo Farmacia.csproj y con esto se podria iniciar.
