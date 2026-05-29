@@ -31,6 +31,7 @@ namespace Farmacia.Controllers
                         cmd.Parameters.AddWithValue("@fechaFabricacion", medicamento.fechaFabricacion);
                         cmd.Parameters.AddWithValue("@gramaje", medicamento.gramaje ?? "");
 
+// Ejecuta la consulta de acción (INSERT) que no devuelve un conjunto de resultados.
                         cmd.ExecuteNonQuery();
                     }
                 }
@@ -38,6 +39,7 @@ namespace Farmacia.Controllers
             return RedirectToAction("Crear");
         }
 
+        // Retorna la vista con el formulario en blanco para crear un nuevo medicamento.
         public ActionResult Crear()
         {
             return View();
@@ -71,6 +73,7 @@ namespace Farmacia.Controllers
             return View(med);
         }
 
+       // Acción POST: Intercepta los datos modificados en el formulario y actualiza el registro.
         [HttpPost]
         public ActionResult Editar(Medicamentos medicamento)
         {
